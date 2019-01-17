@@ -13,3 +13,6 @@ $CONFLUENT_HOME/bin/kafka-topics --create \
 --replication-factor 1 \
 --partitions 1 \
 --topic [Topic Name]
+
+# Para executar as ferramentas da Confluent em cenário de teste use o comando abaixo:
+$CONFLUENT_HOME/bin/confluent start
