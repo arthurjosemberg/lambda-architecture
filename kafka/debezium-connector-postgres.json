@@ -1,0 +1,22 @@
+{
+    "name": "debezium-connector-postgresql",
+    "config": {
+      "connector.class": "io.debezium.connector.postgresql.PostgresConnector",
+      "tasks.max": "1",
+      "plugin.name": "wal2json",
+      "database.hostname": "[IP ADDRESS]",
+      "database.port": "5432",
+      "database.user": "postgres",
+      "database.password": "postgres",
+      "database.dbname" : "beltrano",
+      "database.server.name": "my_server",
+      "tombstones.on.delete":"false",
+      "slot.name":"beltrano_slot",
+      "key.converter": "io.confluent.connect.avro.AvroConverter",
+      "value.converter": "io.confluent.connect.avro.AvroConverter",
+      "key.converter.schemas.enable":"false",
+      "value.converter.schemas.enable": "false",
+      "key.converter.schema.registry.url":"http://localhost:8081",
+      "value.converter.schema.registry.url":"http://localhost:8081"
+    }
+  }

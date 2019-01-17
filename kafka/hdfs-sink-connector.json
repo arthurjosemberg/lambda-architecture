@@ -1,0 +1,24 @@
+{
+    "name":"hdfs-sink-connector",
+    "config":{
+      "connector.class":"io.confluent.connect.hdfs.HdfsSinkConnector",
+      "tasks.max": 1,
+  "topics":"my_server.public.cidades,my_server.public.clientes_pf,my_server.public.clientes_pj,my_server.public.cursos,my_server.public.empregados,my_server.public.estados,my_server.public.pedidos,my_server.public.pedidos_detalhes,my_server.public.turmas",
+      "hdfs.url":"hdfs://[IP ADDRESS]:8020",
+      "topics.dir":"/user/root/topics",
+      "logs.dir":"/user/root/logs",
+      "key.converter":"io.confluent.connect.avro.AvroConverter",
+      "key.converter.schema.registry.url":"http://localhost:8081",
+      "value.converter":"io.confluent.connect.avro.AvroConverter",
+      "value.converter.schema.registry.url":"http://localhost:8081",
+      "hive.integration":"true",
+      "hive.metastore.uris":"thrift://[IP ADDRESS]:9083",
+      "schema.compatibility":"BACKWARD",
+      "hive.database":"beltrano",
+      "format.class":"io.confluent.connect.hdfs.parquet.ParquetFormat",
+      "row.format.serde":"parquet.hive.serde.ParquetHiveSerDe",
+      "stored.as.inputformat":"parquet.hive.DeprecatedParquetInputFormat",
+      "outputformat":"parquet.hive.DeprecatedParquetOutputFormat",
+      "flush.size":100
+     }
+  }
